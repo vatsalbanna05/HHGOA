@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-darkest: #030F09;
+  --bg-dark: #071B12;
+  --bg-emerald: #0A2318;
+  --bg-card: #0F3223;
+  --gold-primary: #F3C048;
+  --gold-warm: #E5A93C;
+  --gold-light: #FFE596;
+  --saffron: #E86A23;
+  --magenta: #D93B78;
+  --cream: #FBF8EF;
+  --cream-muted: #A3C2AE;
+  --border-gold: rgba(243, 192, 72, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-darkest);
+  color: var(--cream);
+  font-family: 'Outfit', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Utilities & Components */
+
+.font-display {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Ornate Background Pattern */
+.bg-goa-pattern {
+  background-color: #051810;
+  background-image: 
+    radial-gradient(circle at 50% 20%, rgba(243, 192, 72, 0.08), transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(217, 59, 120, 0.06), transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(232, 106, 35, 0.06), transparent 45%),
+    linear-gradient(to bottom, rgba(3, 15, 9, 0.95), rgba(7, 27, 18, 0.98));
+}
+
+.bg-ornate-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(243, 192, 72, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(243, 192, 72, 0.03) 1px, transparent 1px);
+}
+
+/* Gold Gradient Text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFE596 0%, #F3C048 50%, #E5A93C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-magenta-gradient {
+  background: linear-gradient(135deg, #FF5C93 0%, #D93B78 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-saffron-gradient {
+  background: linear-gradient(135deg, #FA8C43 0%, #E86A23 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gold Shimmer Button */
+.btn-gold-shimmer {
+  position: relative;
+  background: linear-gradient(135deg, #F3C048 0%, #E5A93C 50%, #C98A1B 100%);
+  color: #030F09;
+  font-weight: 800;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(243, 192, 72, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-gold-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.5s;
+}
+
+.btn-gold-shimmer:hover::before {
+  left: 100%;
+}
+
+.btn-gold-shimmer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(243, 192, 72, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.btn-gold-shimmer:active {
+  transform: translateY(0);
+}
+
+/* Secondary Ornate Button */
+.btn-ornate-secondary {
+  background: rgba(15, 50, 35, 0.6);
+  border: 1px solid rgba(243, 192, 72, 0.3);
+  color: #FBF8EF;
+  backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+}
+
+.btn-ornate-secondary:hover {
+  background: rgba(15, 50, 35, 0.9);
+  border-color: rgba(243, 192, 72, 0.6);
+  color: #F3C048;
+  transform: translateY(-1px);
+}
+
+/* Card Ornate Border */
+.card-ornate {
+  background: rgba(15, 50, 35, 0.45);
+  border: 1px solid rgba(243, 192, 72, 0.2);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  position: relative;
+}
+
+.card-ornate::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(243, 192, 72, 0.4), transparent 40%, rgba(217, 59, 120, 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #051810;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0F3223;
+  border: 1px solid rgba(243, 192, 72, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #174834;
+}
+
+/* Frame Glow Animation */
+@keyframes goldPulse {
+  0%, 100% {
+    box-shadow: 0 20px 60px rgba(3, 15, 9, 0.8), 0 0 30px rgba(243, 192, 72, 0.15);
+  }
+  50% {
+    box-shadow: 0 20px 70px rgba(3, 15, 9, 0.9), 0 0 50px rgba(243, 192, 72, 0.3);
+  }
+}
+
+.frame-glow {
+  animation: goldPulse 4s infinite ease-in-out;
+}
