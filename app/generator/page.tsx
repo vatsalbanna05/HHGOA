@@ -125,7 +125,7 @@ export default function GeneratorPage() {
 
   return (
     <div className="min-h-screen bg-goa-pattern flex flex-col justify-between">
-      
+
       {/* Studio Top Navigation */}
       <header className="sticky top-0 z-40 bg-goa-darkest/90 backdrop-blur-xl border-b border-gold/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -146,18 +146,16 @@ export default function GeneratorPage() {
       <div className="lg:hidden sticky top-16 z-30 bg-goa-dark/95 border-b border-gold/20 p-2 flex gap-2 max-w-md mx-auto">
         <button
           onClick={() => setActiveTab("edit")}
-          className={`flex-1 py-2 rounded-xl text-xs font-display font-bold flex items-center justify-center gap-2 ${
-            activeTab === "edit" ? "bg-gold text-goa-darkest shadow-md" : "text-cream-muted"
-          }`}
+          className={`flex-1 py-2 rounded-xl text-xs font-display font-bold flex items-center justify-center gap-2 ${activeTab === "edit" ? "bg-gold text-goa-darkest shadow-md" : "text-cream-muted"
+            }`}
         >
           <Layers size={14} />
           <span>Editor</span>
         </button>
         <button
           onClick={() => setActiveTab("preview")}
-          className={`flex-1 py-2 rounded-xl text-xs font-display font-bold flex items-center justify-center gap-2 ${
-            activeTab === "preview" ? "bg-gold text-goa-darkest shadow-md" : "text-cream-muted"
-          }`}
+          className={`flex-1 py-2 rounded-xl text-xs font-display font-bold flex items-center justify-center gap-2 ${activeTab === "preview" ? "bg-gold text-goa-darkest shadow-md" : "text-cream-muted"
+            }`}
         >
           <Sparkles size={14} />
           <span>Live Preview</span>
@@ -167,12 +165,12 @@ export default function GeneratorPage() {
       {/* Studio Grid Main Layout */}
       <main className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
+
           {/* LEFT: Control Panel Studio */}
           <section className={`lg:col-span-6 space-y-8 ${activeTab === "preview" ? "hidden lg:block" : "block"}`}>
-            
+
             <div className="p-6 sm:p-8 rounded-3xl bg-goa-card/60 border border-gold/20 card-ornate space-y-8 shadow-xl">
-              
+
               {/* Studio Title */}
               <div className="border-b border-gold/20 pb-5 flex items-center justify-between">
                 <div>
@@ -355,11 +353,10 @@ export default function GeneratorPage() {
                       <button
                         key={themeKey}
                         onClick={() => setSelectedTheme(themeKey)}
-                        className={`p-3 rounded-xl border text-left transition-all ${
-                          isSelected
+                        className={`p-3 rounded-xl border text-left transition-all ${isSelected
                             ? "border-gold bg-gold/15 shadow-md shadow-gold/20"
                             : "border-gold/20 bg-black/30 hover:border-gold/50"
-                        }`}
+                          }`}
                       >
                         <div className="flex items-center justify-between mb-1">
                           <span className="font-display font-bold text-xs text-cream">
@@ -409,7 +406,7 @@ export default function GeneratorPage() {
 
           {/* RIGHT: Large Sticky Live Frame Preview */}
           <section className={`lg:col-span-6 sticky top-24 ${activeTab === "edit" ? "hidden lg:block" : "block"}`}>
-            
+
             <div className="space-y-4 text-center">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-mono-code">
                 <Sparkles size={14} className="animate-pulse" />
